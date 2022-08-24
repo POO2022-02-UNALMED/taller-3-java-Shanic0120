@@ -8,33 +8,35 @@ public class TV {
 	private int volumen = 1;
 	private Control control;
 
-	private static int numTV;
+	private static int numTV = 0;
 
 	public TV(Marca marca, boolean estado) {
 		this.setMarca(marca);
 		this.estado = estado;
+
+		numTV++;
 	}
 
 	public void volumenUp() {
-		if (canal <= 7 && estado) {
+		if (canal < 7 && estado) {
 			canal++;
 		}
 	}
 
 	public void volumenDown() {
-		if (canal >= 0 && estado) {
+		if (canal > 0 && estado) {
 			canal--;
 		}
 	}
 
 	public void canalUp() {
-		if (canal <= 120 && estado) {
+		if (canal < 120 && estado) {
 			canal++;
 		}
 	}
 
 	public void canalDown() {
-		if (canal >= 1 && estado) {
+		if (canal > 1 && estado) {
 			canal--;
 		}
 	}
